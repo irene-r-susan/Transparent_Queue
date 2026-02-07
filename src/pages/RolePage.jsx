@@ -1,14 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import patientLogo from '../assets/patient_logo.jpeg';
 import staffLogo from '../assets/staff_logo.jpeg';
+import Header from './Temp';
+import Footer from "./Footer";
 
 function RolePage() {
   const navigate = useNavigate();
 
   return (
-    <div class="whole">
+    <div className="whole">
+      <Header/>
        <div className="page">
-        <h1>I am</h1>
+        <h1 style={{textAlign:"center"}}>Primary Health Centre</h1>
+        <h1 style={{fontFamily:"sans-serif",fontSize:"larger",fontWeight:"750"}}>Please select your role</h1>
       <div className="card">
         <div className="identity-card" onClick={() => navigate('/patient')}>
           <img className="patient-logo" src={patientLogo} alt="patientlogo" />
@@ -20,6 +24,7 @@ function RolePage() {
         </div>
       </div>
     </div>
+    <Footer/>
     </div>
     
   );

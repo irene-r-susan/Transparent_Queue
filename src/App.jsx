@@ -6,10 +6,13 @@ import StaffDashboard from "./pages/StaffDashboard";
 import ServicePage from "./pages/ServicePage";
 import TokenPage from "./pages/TokenPage";
 import LiveQueue from "./pages/LiveQueue";
+import About from "./pages/About";
+
 
 export default function App() {
   return (
     <BrowserRouter>
+     
       <Routes>
         <Route path="/" element={<RolePage />} />
         <Route path="/patient" element={<PatientForm />} />
@@ -18,6 +21,9 @@ export default function App() {
         <Route path="/token" element={<TokenPage />} />
         <Route path="/queue" element={<StaffDashboard />} />
         <Route path="/livequeue" element={<LiveQueue />} />
+        <Route path="/about" element={<About />} />
+
+   
 
       </Routes>
     </BrowserRouter>
