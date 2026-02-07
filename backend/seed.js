@@ -132,32 +132,7 @@ const seedDatabase = async () => {
       );
     `);
 
-    // 5️⃣ Insert Service Types
-    const servicesResult = await pool.query(`
-      INSERT INTO services (name, base_priority, channel_type, avg_duration_mins) VALUES 
-      ('Quick Approval', 20, 'express', 5),
-      ('Normal Consultation', 10, 'general', 15),
-      ('Longer Consultation', 0, 'general', 30)
-      RETURNING service_id;
-    `);
-
-    const [quickApproval, normalConsult, longConsult] = servicesResult.rows.map(row => row.service_id);
-
-    // 6️⃣ Insert Staff
-    await pool.query(`
-      INSERT INTO staff (email, password, service_id) VALUES
-      ('alice@example.com', 'password123', $1),
-      ('bob@example.com', 'password123', $2),
-      ('carol@example.com', 'password123', $3);
-    `, [quickApproval, normalConsult, longConsult]);
-
-    // 7️⃣ Insert Queue Tokens
-    await pool.query(`
-      INSERT INTO queue_tokens (token_number, visitor_name, visitor_phonenumber, service_id, status) VALUES
-      ('T001', 'John Doe', '9998887777', $1, 'pending'),
-      ('T002', 'Jane Smith', '8887776666', $2, 'pending'),
-      ('T003', 'Alice Brown', '7776665555', $3, 'pending');
-    `, [quickApproval, normalConsult, longConsult]);
+    
 
     console.log("Database seeded successfully!");
     process.exit();
