@@ -142,10 +142,10 @@ app.use(express.json());
 /* ---------------- DATABASE ---------------- */
 
 const pool = new Pool({
-  user: "krishnapoojitha",
+  user: "postgres",
   host: "localhost",
   database: "transparent_queue",
-  password: "5669",
+  password: "Ire@1234",
   port: 5432,
 });
 
@@ -201,8 +201,10 @@ app.post("/api/tokens/register", async (req, res) => {
 
     io.emit("queue_updated");
 
-    res.status(201).json(result.rows[0]);
-
+res.status(201).json({
+  token_number: result.rows[0].token_number,
+  token_id: result.rows[0].token_id
+});
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
