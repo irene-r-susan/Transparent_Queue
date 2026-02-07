@@ -16,7 +16,9 @@ export default function App() {
         <Route path="/staff" element={<StaffDashboard />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/token" element={<TokenPage />} />
-        <Route path="/queue" element={<LiveQueue />} />
+        <Route path="/queue" element={<StaffDashboard />} />
+        <Route path="/livequeue" element={<LiveQueue />} />
+
       </Routes>
     </BrowserRouter>
   );

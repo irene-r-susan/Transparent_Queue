@@ -1,12 +1,18 @@
+import { useLocation } from "react-router-dom";
+
 export default function LiveQueue() {
+  const location = useLocation();
+  const { department } = location.state || {}; // get department from navigation state
+
   return (
-    <div style={{ textAlign: "center", marginTop: "80px" }}>
-      <h2>Live Queue Status</h2>
-
-      <h3>Now Serving: Token D10</h3>
-      <h3>Your Token: D12</h3>
-
-      <p>People Ahead: 2</p>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Live Queue</h2>
+      {department ? (
+        <p>Showing queue for: <strong>{department}</strong></p>
+      ) : (
+        <p>No department selected</p>
+      )}
+      <h2>Total no of people in queue: 12</h2>
     </div>
   );
 }

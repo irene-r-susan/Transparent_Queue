@@ -6,9 +6,8 @@ function RolePage() {
   const navigate = useNavigate();
 
   return (
-    
-      
-      <div className="page">
+    <div class="whole">
+       <div className="page">
         <h1>I am</h1>
       <div className="card">
         <div className="identity-card" onClick={() => navigate('/patient')}>
@@ -20,6 +19,7 @@ function RolePage() {
           <p className="title">A Staff</p>
         </div>
       </div>
+    </div>
     </div>
     
   );

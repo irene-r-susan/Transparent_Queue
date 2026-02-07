@@ -67,3 +67,6 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+.whole{
+    background:linear-gradient(to bottom,silver,rgba(0, 162, 255, 0.41),beige)
+}
