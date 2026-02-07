@@ -6,8 +6,18 @@ export default function PatientForm() {
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
 
   function handleContinue() {
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!phoneRegex.test(phone)) {
+      setError("Invalid phone number. Please enter 10 digits.");
+      return;
+    }
+
+    
+    setError("");
     navigate("/service");
   }
 
@@ -31,8 +41,10 @@ export default function PatientForm() {
 
       <br /><br />
 
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
       <button onClick={handleContinue}>
-        Continue →
+        Continue →  
       </button>
     </div>
   );

@@ -4,7 +4,9 @@ export default function ServicePage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ textAlign: "center", marginTop: "80px" }}>
+    <div>
+      <h1>Welcome!</h1>
+      <div style={{ textAlign: "center", marginTop: "80px" }}>
       <h2>Select Department</h2>
 
       <button onClick={() => navigate("/token")}>
@@ -17,5 +19,7 @@ export default function ServicePage() {
         Cardiology (Long Consultation)
       </button>
     </div>
+    </div>
+    
   );
 }

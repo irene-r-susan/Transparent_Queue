@@ -1,3 +1,47 @@
+.identity-card{
+  width: 200px;
+  border: solid;
+  border-color:rgba(186, 186, 186, 0.384) ;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+   background-color: #5b8fc4;
+  text-align: center;
+  cursor: pointer;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+ 
+  
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    width: 100vh;
+}
+.page{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: solid;
+ 
+  
+}
+.identity-card .patient-logo,
+.identity-card .staff-logo{
+  width: 60%;
+}
+.title{
+  font-family:  sans-serif;
+}
 /* Basic Reset */
 body {
   margin: 0;

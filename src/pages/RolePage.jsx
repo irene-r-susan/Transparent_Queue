@@ -1,39 +1,27 @@
-
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import patientLogo from '../assets/patient_logo.jpeg';
+import staffLogo from '../assets/staff_logo.jpeg';
 
 function RolePage() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Welcome</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "50px",
-          marginTop: "30px",
-        }}
-      >
-        {/* Patient */}
-        <Link to="/patient" style={{ textDecoration: "none", color: "black" }}>
-          <img
-            src="/patientlogo.jpeg"
-            alt="Patient"
-            style={{ width: "250px", cursor: "pointer", borderRadius: "10px" }}
-          />
-          <p>Patient</p>
-        </Link>
+  const navigate = useNavigate();
 
-        {/* Staff */}
-        <Link to="/staff" style={{ textDecoration: "none", color: "black" }}>
-          <img
-            src="/stafflogo.jpeg"
-            alt="Staff"
-            style={{ width: "290px", cursor: "pointer", borderRadius: "10px",height:"250px" }}
-          />
-          <p>Staff</p>
-        </Link>
+  return (
+    
+      
+      <div className="page">
+        <h1>I am</h1>
+      <div className="card">
+        <div className="identity-card" onClick={() => navigate('/patient')}>
+          <img className="patient-logo" src={patientLogo} alt="patientlogo" />
+          <p className="title">A Patient</p>
+        </div>
+        <div className="identity-card" onClick={() => navigate('/staff')}>
+          <img className="staff-logo" src={staffLogo} alt="stafflogo" />
+          <p className="title">A Staff</p>
+        </div>
       </div>
     </div>
+    
   );
 }
 
