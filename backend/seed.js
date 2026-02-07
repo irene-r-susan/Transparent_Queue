@@ -35,7 +35,7 @@ const seedDatabase = async () => {
         token_id SERIAL PRIMARY KEY,
         token_number VARCHAR(10),
         visitor_name VARCHAR(100),
-         visitor_phonenumber VARCHAR(20),
+         visitor_phonenumber VARCHAR(20) NOT NULL,
         service_id INTEGER REFERENCES services(service_id),
         status VARCHAR(20) DEFAULT 'pending',
         is_offline BOOLEAN DEFAULT false,

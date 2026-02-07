@@ -60,6 +60,6 @@ app.post('/api/next', async (req, res) => {
 });
 
 // --- START THE SERVER ---
-server.listen(5000, () => {
+server.listen(5050, () => {
     console.log('Backend running on port 5000');
 });

@@ -6,7 +6,7 @@ function RolePage() {
   const navigate = useNavigate();
 
   return (
-    <div class="whole">
+    <div className="whole">
        <div className="page">
         <h1>I am</h1>
       <div className="card">
