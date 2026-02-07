@@ -17,6 +17,8 @@ const seedDatabase = async () => {
     await pool.query('DROP TABLE IF EXISTS service_requirements CASCADE;');
     await pool.query('DROP TABLE IF EXISTS services CASCADE;');
     await pool.query('DROP TABLE IF EXISTS counters CASCADE;');
+    await pool.query('DROP TABLE IF EXISTS staff CASCADE;');
+
 
     // 2. Create Services Table
     await pool.query(`
