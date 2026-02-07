@@ -1,0 +1,25 @@
+/* Basic Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* Center content nicely */
+h1 {
+  color: #222;
+}
+
+button {
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
