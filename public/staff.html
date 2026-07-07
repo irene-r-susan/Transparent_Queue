@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard - Transparent Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="align-items: flex-start; justify-content: flex-start; padding-top: 3rem;">
+  <div class="header">
+    <h1>Staff Dashboard</h1>
+    <p>Select your department to manage the queue.</p>
+  </div>
+  
+  <div style="width: 100%; max-width: 1200px; margin: 0 auto; text-align: center; margin-bottom: 2rem;">
+    <div class="form-group" style="max-width: 300px; margin: 0 auto;">
+      <select id="department_id">
+        <option value="">Select Department</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="dashboard-layout" id="dashboardContent" style="display: none; width: 100%; margin: 0 auto;">
+    
+    <!-- Left Column: Queue List -->
+    <div class="container" style="max-width: 100%;">
+      <h2>Active Queue</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Total waiting: <strong id="totalWaiting">0</strong></p>
+      
+      <button class="btn" id="callNextBtn" style="margin-bottom: 1rem;">Call Next Visitor</button>
+      
+      <div id="calledVisitor" style="padding: 1rem; background: var(--secondary-color); color: white; border-radius: 0.75rem; margin-bottom: 1rem; display: none;">
+        <strong>Called Token: <span id="calledTokenId"></span></strong> - <span id="calledName"></span>
+      </div>
+
+      <ul class="queue-list" id="queueList">
+        <!-- populated by js -->
+      </ul>
+    </div>
+
+    <!-- Right Column: Add Walk-in -->
+    <div class="container" style="max-width: 100%;">
+      <h2>Add Walk-in</h2>
+      <form id="walkinForm">
+        <div class="form-group">
+          <label for="w_name">Full Name</label>
+          <input type="text" id="w_name" required>
+        </div>
+        <div class="form-group">
+          <label for="w_age">Age</label>
+          <input type="number" id="w_age" required>
+        </div>
+        <div class="form-group">
+          <label for="w_reason">Reason for visit</label>
+          <input type="text" id="w_reason" required>
+        </div>
+        <div class="form-group">
+          <label for="w_service_type">Service Type</label>
+          <select id="w_service_type" required>
+            <option value="quick approval">Quick Approval</option>
+            <option value="longer consultation">Longer Consultation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="w_queue_type">Queue Type</label>
+          <select id="w_queue_type" required>
+            <option value="walkin">Standard Walk-in</option>
+            <option value="emergency">Emergency Override</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Register Walk-in</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/staff.js"></script>
+</body>
+</html>

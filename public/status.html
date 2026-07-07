@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queue Status - Transparent Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="statusContainer" style="display: none;">
+    <div class="header">
+      <h1 id="tokenName">Hi, Visitor</h1>
+      <p>Here is your live queue status.</p>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <div class="status-label">Your Token Number</div>
+      <div class="status-big" id="tokenId">--</div>
+    </div>
+    
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
+      <div class="card">
+        <h3 id="peopleAhead">--</h3>
+        <p>People Ahead</p>
+      </div>
+      <div class="card">
+        <h3 id="estWait">-- min</h3>
+        <p>Estimated Wait</p>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <p id="currentStatus" style="font-weight: 600; color: var(--primary-color);">Status: Waiting</p>
+    </div>
+  </div>
+  
+  <div class="container" id="loadingContainer">
+    <div class="header">
+      <h2>Loading status...</h2>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/status.js"></script>
+</body>
+</html>

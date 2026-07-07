@@ -125,8 +125,8 @@ Doctor / Staff
 
 | Layer | Suggested Choice |
 |---|---|
-| Frontend | React (separate visitor app and staff dashboard) |
-| Backend | Node.js/Express |
+| Frontend | html,css,javascript |
+| Backend | Node.js/Express.js |
 | Database | PostgreSQL |
 | Real-time updates | WebSockets (Socket.io) |
 
